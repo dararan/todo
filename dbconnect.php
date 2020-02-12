@@ -1,6 +1,6 @@
 <?php
 
-//DBに接続
+//DBに接続するページ。打ち間違い注意！！
 $host = "localhost";//MySQLがインストールされているコンピューター
 $dbname = "todo";//使用するDB
 $charset = "utf8mb4";//文字コード

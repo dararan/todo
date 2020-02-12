@@ -8,7 +8,7 @@ $stmt->execute();
 
 //実行結果を変数に代入している
 // $results=$stmt->fetchAll();
-
+//全部取って参る　なにを？？表示するやつか？
 $tasks = $stmt->fetchAll();
 
 ?>

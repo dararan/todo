@@ -1,13 +1,17 @@
+<!-- 編集ページ -->
+
 <?php
+
+//データの読み込み？
 require_once('dbconnect.php');
 require_once('function.php');
 //データ受け取り
 $id = $_GET['id'];
 
-
+//これなんだっけ？準備する
 $stmt = $dbh->prepare('SELECT * FROM tasks WHERE id = ?');
 $stmt->execute([$id]);
-
+//取ってまいるidを
 $task = $stmt->fetch();
 
 ?>
@@ -37,10 +41,12 @@ $task = $stmt->fetch();
                 <form action="update.php" method="post">
                     <div class="form-group">
                         <label for="title">Title</label>
+                        <!-- きっと表示するために -->
                         <input type="text" class="form-control" name="title" id="title" value="<?= $task['title'];?>">
                     </div>
                     <div class="form-group">
                         <label for="contents">Contents</label>
+                        <!-- きっと表示するために -->
                         <textarea class="form-control" name="contents" id="contents" cols="30" rows="10"><?= $task['contents'];?></textarea>
                     </div>
                     <div class="form-group">
@@ -49,6 +55,7 @@ $task = $stmt->fetch();
                             <label class="custom-file-label" for="image">Choose file</label>
                         </div>
                     </div>
+                    <!-- きっと表示するため？ -->
                     <input type="hidden" name="id" value="<?=h($task['id']);?>">
                     <div class="d-flex justify-content-end">
                         <button type="submit" class="btn btn-primary">UPDATE</button>
